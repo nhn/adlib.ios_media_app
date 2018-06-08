@@ -4,29 +4,21 @@
 
 ---
 ### SDK 지원 Version
-* 신규버전 v4.200 이상부터 미디에이션 신규클래스 사용 가능
+* 신규버전 v5.000 
 
 ### 지원 광고 플랫폼
-* adlib / adlib-house 
-* google admob
-* facebook audience network
-* inmobi
-* adam adfit
-* cauly v.3.1
-* admixer v.1.3.1
+> adlib / adlib-house <br>
+> admixer - v.1.4.2 <br>
+> Adam - v2.0.1 <br>
+> Adfit - v3.0.1 <br>
+> Admob - v7.31.0 <br>
+> Cauly - v3.1 <br>
+> Facebook - v4.33.0 <br>
+> inmobi - v.5.1.0 <br>
 
 ### 개발환경
-Adlib SDK version : v.4.201 <br>
 Base SDK : iOS 7.0 이상<br>
 iOS Deployment Target : iOS 7.0 이상
-<br><br>
-
-### SDK 4.1 버전 가이드
-SDK 4.2 버전 이전의 가이드는 아래 사이트 링크에서 확인 가능합니다. <br>
-프로젝트 설정 및 SDK 추가 가이드는 해당 페이지를 통해서 더 상세하게 확인하실 수 있습니다.<br>
-[SDK 4.1 버전 가이드 링크](http://developer.adlibr.com/ssp_ios_guide.html)
-<br>
-* 신규 미디에이션 기능은 4.200 버전 이상부터 사용가능하며, 기존 미디에이션 적용방법은 계속 지원됩니다.
 <br><br>
 
 ### iOS9 [ATS(App Transport Security)](https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/) 처리

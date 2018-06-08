@@ -9,6 +9,9 @@
 #ifndef ADLibBanner_h
 #define ADLibBanner_h
 
+///////////////////////////////////////////////////////////////////////////
+// 애드립 광고 띠/전면 광고 - 미디에이션 클래스                                     //
+///////////////////////////////////////////////////////////////////////////
 
 #import <Adlib/ALMediationDefine.h>
 #import <Adlib/ALMediation.h>
@@ -29,9 +32,6 @@
 // 미디에이션 띠배너 BackFill제공 탬플릿뷰
 #import <Adlib/ALAdBackFillView.h>
 
-
-
-
 /**
  * 애드립 전용 이미지 광고 뷰
  * 애드립 및 애드립 하우스 플랫폼만 사용할 수 있는 이미지/웹 뷰 광고 제공 클래스
@@ -39,7 +39,6 @@
 
 // (Width x Height) 동적 소재사이즈 광고
 #import <Adlib/ALDynamicBanner.h>
-
 #import <Adlib/ALDynamicBannerView.h>
 #import <Adlib/ALDynamicBannerController.h>
 

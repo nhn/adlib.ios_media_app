@@ -34,7 +34,6 @@ extern NSString * const ADLibSessionDidFailedLinkNotification;
 - (instancetype)initWithAdlibKey:(NSString *)appKey configSession:(ADLibSession *)session;
 
 - (void)linkSession;
-- (NSDictionary *)appConfigurations;
 
 + (void)setDebugMode;
 

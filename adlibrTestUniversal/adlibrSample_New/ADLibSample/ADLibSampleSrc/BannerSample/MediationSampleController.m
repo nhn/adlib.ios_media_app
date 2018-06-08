@@ -11,16 +11,14 @@
 #import <Adlib/ADLibBanner.h>
 #import "SampleKey.h"
 
-//#import "ALAdapterAdmob.h"
+//#import "ALAdapterFacebook.h"
+//#import "ALAdapterAdMixer.h"
+//#import "ALAdapterAdfit.h"
+//#import "ALAdapterTad.h"
 //#import "ALAdapterCauly.h"
-
-
-// ADMOB의 APP 아이디를 설정합니다.
-#define ADMOB_ID @"애드몹 띠배너 아이디 설정"
-#define ADMOB_INTERSTITIAL_ID @"애드몹 전면배너 아이디 설정"
-
-// CAULY의 키값을 설정합니다.
-#define CAULY_ID        @"CAULY"
+//#import "ALAdapterInmobi.h"
+//#import "ALAdapterAdMixer.h"
+//#import "ALAdapterMezzo.h"
 
 
 @interface MediationSampleController () <ALInterstitialAdDelegate, ALAdBannerViewDelegate>
@@ -41,8 +39,6 @@
     
     // 미디에이션 플랫폼 등록
     //[ALMediation registerPlatform:ALMEDIATION_PLATFORM_ADMOB withClass:[ALAdapterAdmob class]];
-    //[ALMediation registerPlatform:ALMEDIATION_PLATFORM_CAULY withClass:[ALAdapterCauly class]];
-    //[ALMediation registerPlatform:ALMEDIATION_PLATFORM_ADAM withClass:[ALAdapterAdfit class]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -51,13 +47,12 @@
     
     // 미디에이션 플랫폼 띠배너 키설정
     //[_bannerView setKey:ADMOB_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
-    //[_bannerView setKey:CAULY_ID forPlatform:ALMEDIATION_PLATFORM_CAULY];
     
     _bannerView.isTestMode = YES;
     _bannerView.repeatLoop = YES;
     
     //앱 업데이트시에는 발급받으신 키로 교체하세요.
-    NSString *appKey = kADLIB_TEST_ADMOB;
+    NSString *appKey = ADLIB_APP_KEY;
     
     [_bannerView startAdViewWithKey:appKey
                  rootViewController:self
@@ -78,12 +73,11 @@
     
     //미디에이션 플랫폼 전면배너 키설정
     //[_interstitialAd setKey:ADMOB_INTERSTITIAL_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
-    //[_interstitialAd setKey:CAULY_ID forPlatform:ALMEDIATION_PLATFORM_CAULY];
     
     interstitialAd.isTestMode = YES;
     
     //앱 업데이트시에는 발급받으신 키로 교체하세요.
-    NSString *appKey = kADLIB_TEST_ADMOB;
+    NSString *appKey = ADLIB_APP_KEY;
     
     [_interstitialAd requestAdWithKey:appKey adDelegate:self];
 }
