@@ -5,7 +5,7 @@
 <br>
 
 ## 프로젝트 설정 및 가이드 
-* [프로젝트 설정 가이드 링크](http://developer.adlibr.com/ssp_ios_guide2.html)
+* [프로젝트 설정 가이드 링크](http://developer.adlibr.com/ssp_ios_guide.html)
 * [신규버전 배너 연동 가이드 링크](https://github.com/nhnent/adlib.ios_media_app/blob/master/adlibrTestUniversal/adlibrSample_New/README.md)
 <br>
 
