@@ -51,11 +51,6 @@ Ex.) GoogleMobileAds.framework
 Project - Build Settings 항목에 Other Linker Flags 추가가 필요합니다.
 Linking - Other Linker Flags 항목에 -ObjC 를 추가합니다.
 
-#### 단계2.  TARGET  Build Phases 항목에 Library 추가
-프로젝트 TARGET 설정의 Build Phases 항목 Link Binary With Libraries 탭에 SDK 필요한 아래 라이브러리를 추가합니다. <br><br>
-
-* libstdc++.6.0.0.tbd <br>
-
 <br><br>
 ### 애드립 배너 연동 ( 띠 배너)
 #### 단계1. 배너 연동을 위한 초기화

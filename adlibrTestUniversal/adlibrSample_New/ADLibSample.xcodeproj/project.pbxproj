@@ -16,7 +16,6 @@
 		B08C82711E94884100BB4085 /* CS003.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C82381E94884100BB4085 /* CS003.m */; };
 		B08C82731E94884100BB4085 /* CSIndexTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C823B1E94884100BB4085 /* CSIndexTableViewController.m */; };
 		B08C82741E94884100BB4085 /* CSStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08C823C1E94884100BB4085 /* CSStoryboard.storyboard */; };
-		B08C828F1E94887000BB4085 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B08C828E1E94887000BB4085 /* libstdc++.6.0.9.tbd */; };
 		B08C82BD1E9489B800BB4085 /* AdlibSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C82921E9489B800BB4085 /* AdlibSampleController.m */; };
 		B08C82BE1E9489B800BB4085 /* MediationSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C82941E9489B800BB4085 /* MediationSampleController.m */; };
 		B0ED41E91D6429D900D4774E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0ED41E81D6429D900D4774E /* main.m */; };
@@ -63,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B08C828F1E94887000BB4085 /* libstdc++.6.0.9.tbd in Frameworks */,
 				9DDD309220CA766B00BC6872 /* Adlib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
