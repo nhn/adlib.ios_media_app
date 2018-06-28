@@ -14,20 +14,18 @@
 > iOS 9 ATS(App Transport Security) 관련 가이드 업데이트 <br>
 > XCode 7 스토어 업로드시 에러 사항 수정 (Adlib.bundle 파일 교체 필요)<br>
 > XCode 7 이상 사용시 최신 SDK 및 Adlib.bundle 파일 교체 필요<br>
-> 샘플 프로젝트 bitcode 설정은 기본 NO로 설정<br>
 
 ## Bitcode 지원
 SDK v5.000 이상 버전에서 부터는 비트코드 지원 프레임워크 형태로 제공됩니다.
 
 ## 미디에이션 플랫폼 SDK 지원 
-> adlib / adlib-house <br>
 > admixer - v.1.4.2 <br>
 > Adam - v2.0.1 <br>
-> Adfit - v3.0.1 <br>
+> Adfit - v3.0.2 <br>
 > Admob - v7.31.0 <br>
 > Cauly - v3.1 <br>
-> Facebook - v4.33.0 <br>
-> inmobi - v.5.1.0 <br>
+> Facebook - v4.34.0 <br>
+> inmobi - v.7.1.1 <br>
 <br>
 
 
