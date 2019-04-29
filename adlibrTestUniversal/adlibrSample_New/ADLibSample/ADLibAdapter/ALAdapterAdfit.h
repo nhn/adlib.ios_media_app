@@ -6,7 +6,6 @@
 //  Copyright © 2017년 mocoplex. All rights reserved.
 //
 
-#import <Adlib/Adlib.h>
 #import <Adlib/ALMediation.h>
 
 @interface ALAdapterAdfit : ALMediation <ALMediationInterstitialProtocol, ALMediationBannerProtocol>

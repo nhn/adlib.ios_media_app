@@ -13,7 +13,7 @@
 
 
 /*
- * confirmed compatible with Caluy SDK 3.1
+ * confirmed compatible with Caluy SDK 3.1.5
  */
 
 @interface ALAdapterCauly () <CaulyAdViewDelegate, CaulyInterstitialAdDelegate>

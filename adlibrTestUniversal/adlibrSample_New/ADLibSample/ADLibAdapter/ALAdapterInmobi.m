@@ -7,19 +7,14 @@
 //
 
 #import "ALAdapterInmobi.h"
-#import "IMSdk.h"
-#import "IMBanner.h"
-#import "IMBannerDelegate.h"
-#import "IMInterstitial.h"
-#import "IMInterstitialDelegate.h"
-#import "IMCommonConstants.h"
+@import InMobiSDK;
 
 #define kBannerSizePhone CGSizeMake(320, 50)
 #define kBannerSizePad   CGSizeMake(728, 90)
 
 
 /*
- * confirmed compatible with Inmobi SDK 5.1.0
+ * confirmed compatible with Inmobi SDK 7.2.7
  */
 
 @interface ALAdapterInmobi () <IMBannerDelegate, IMInterstitialDelegate>

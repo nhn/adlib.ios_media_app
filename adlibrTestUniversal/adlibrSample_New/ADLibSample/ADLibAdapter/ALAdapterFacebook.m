@@ -11,7 +11,7 @@
 
 
 /*
- * confirmed compatible with Facebook SDK 
+ * confirmed compatible with Facebook SDK 5.3.1
  */
 
 @interface ALAdapterFacebook () <FBAdViewDelegate, FBInterstitialAdDelegate>

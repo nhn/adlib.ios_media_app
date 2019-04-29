@@ -11,13 +11,12 @@
 #import <Adlib/ADLibBanner.h>
 #import "SampleKey.h"
 
+//#import "ALAdapterAdmob.h"
 //#import "ALAdapterFacebook.h"
 //#import "ALAdapterAdMixer.h"
 //#import "ALAdapterAdfit.h"
-//#import "ALAdapterTad.h"
 //#import "ALAdapterCauly.h"
 //#import "ALAdapterInmobi.h"
-//#import "ALAdapterAdMixer.h"
 //#import "ALAdapterMezzo.h"
 
 
@@ -46,7 +45,7 @@
     [super viewDidAppear:animated];
     
     // 미디에이션 플랫폼 띠배너 키설정
-    //[_bannerView setKey:ADMOB_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
+    //[_bannerView setKey:ADMOB_BAND_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
     
     _bannerView.isTestMode = YES;
     _bannerView.repeatLoop = YES;
@@ -82,19 +81,6 @@
     [_interstitialAd requestAdWithKey:appKey adDelegate:self];
 }
 
-- (void)showAlertController:(NSString *)message
-{
-    UIAlertController *alert = [UIAlertController
-                                alertControllerWithTitle:@""
-                                message:message
-                                preferredStyle:UIAlertControllerStyleAlert];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [alert dismissViewControllerAnimated:YES completion:nil];
-    });
-}
-
 #pragma mark - ALInterstitialAd delegate
 /**
  *  전면광고 요청이 성공에 대한 알림
@@ -109,7 +95,6 @@
  */
 - (void)alInterstitialAd:(ALInterstitialAd *)interstitialAd didFailedAdAtPlatform:(ALMEDIATION_PLATFORM)platform
 {
-    [self showAlertController:@"didFailedAd"];
     NSLog(@"didFailedAdAtPlatform : %zd", platform);
 }
 
@@ -144,9 +129,7 @@
  */
 - (void)alAdBannerView:(ALAdBannerView *)bannerView didFailedAdAtPlatform:(ALMEDIATION_PLATFORM)platform
 {
-    [self showAlertController:@"bannerView failedAd"];
     NSLog(@"bannerView failedAd : %@", [ALMediationDefine nameOfPlatform:platform]);
-    
 }
 
 //등록된 모든 플랫폼 광고의 실패 상태를 반환합니다.

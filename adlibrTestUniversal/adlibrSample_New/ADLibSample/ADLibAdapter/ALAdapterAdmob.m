@@ -12,7 +12,7 @@
 
 
 /*
- * confirmed compatible with Admob SDK 7.16.0
+ * confirmed compatible with Admob SDK 7.43.0
  */
 
 @interface ALAdapterAdmob () <GADInterstitialDelegate, GADBannerViewDelegate>

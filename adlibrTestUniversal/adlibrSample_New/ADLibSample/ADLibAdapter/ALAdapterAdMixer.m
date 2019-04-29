@@ -13,7 +13,7 @@
 #import "AdMixerView.h"
 
 /*
- * confirmed compatible with admixer SDK 1.3.1
+ * confirmed compatible with admixer SDK 1.4.3
  */
 
 #define kAdMixerBannerViewSize CGSizeMake(320, 50)

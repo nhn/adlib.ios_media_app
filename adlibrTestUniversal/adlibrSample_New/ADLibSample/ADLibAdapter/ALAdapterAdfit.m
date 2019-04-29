@@ -10,7 +10,7 @@
 #import <AdFitSDK/AdFitSDK-Swift.h>
 
 /*
- * confirmed compatible with Adfit SDK 3.0.1
+ * confirmed compatible with Adfit SDK 3.0.7
  *
  * Adfit 3.0 이상에서만 지원되는 어뎁터 파일입니다.
  * 3.0 이전버전 사용의 경우 ALAdapterAdam 클래스를 참고하세요.
@@ -88,7 +88,7 @@
         self.adView = adView;
     }
     
-    _adView.refreshInterval = 0.f;
+//    _adView.refreshInterval = 0.f;
     _adView.delegate = self;
     _adView.frame = self.bannerContainerView.bounds;
     _adView.rootViewController = viewController;

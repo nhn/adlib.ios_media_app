@@ -23,12 +23,12 @@
 
 |플랫폼|버전|SDK 다운로드|
 |---|:---:|:---:|
-|Admixer|v.1.4.2|<a href="http://admixer.co.kr/" target="_blank">다운로드</a>|
-|Adfit|v3.0.2|<a href="https://github.com/adfit/adfit-ios-sdk" target="_blank">다운로드</a>|
-|Admob|v7.31.0|<a href="https://developers.google.com/admob/ios/download" target="_blank">다운로드</a>|
-|Cauly|v3.1|<a href="https://github.com/cauly/iOS-SDK/tree/master/" target="_blank">다운로드</a>|
-|Facebook|v4.34.0|<a href="https://developers.facebook.com/docs/ios/downloads?locale=ko_KR" target="_blank">다운로드</a>|
-|Inmobi|v.7.1.0|<a href="http://www.inmobi.com/products/sdk/" target="_blank">다운로드</a>|
+|Admixer|v1.4.3|<a href="http://admixer.co.kr/" target="_blank">다운로드</a>|
+|Adfit|v3.0.7|<a href="https://github.com/adfit/adfit-ios-sdk" target="_blank">다운로드</a>|
+|Admob|v7.43.0|<a href="https://developers.google.com/admob/ios/download" target="_blank">다운로드</a>|
+|Cauly|v3.1.5|<a href="https://github.com/cauly/iOS-SDK/tree/master/" target="_blank">다운로드</a>|
+|Facebook|v5.3.1|<a href="https://developers.facebook.com/docs/audience-network/download" target="_blank">다운로드</a>|
+|Inmobi|v7.2.7|<a href="http://www.inmobi.com/products/sdk/" target="_blank">다운로드</a>|
 
 
 

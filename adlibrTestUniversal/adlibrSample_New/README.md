@@ -3,19 +3,6 @@
 또한 기타 광고 플랫폼을 사용하여 미디에이션 기능을 사용하는 방법을 제공합니다.
 
 ---
-### SDK 지원 Version
-* 신규버전 v5.000 
-
-### 지원 광고 플랫폼
-> adlib / adlib-house <br>
-> admixer - v.1.4.2 <br>
-> Adam - v2.0.1 <br>
-> Adfit - v3.0.1 <br>
-> Admob - v7.31.0 <br>
-> Cauly - v3.1 <br>
-> Facebook - v4.33.0 <br>
-> inmobi - v.5.1.0 <br>
-
 ### 개발환경
 Base SDK : iOS 7.0 이상<br>
 iOS Deployment Target : iOS 7.0 이상

@@ -120,19 +120,6 @@
     }
 }
 
-- (void)showAlertController:(NSString *)message
-{
-    UIAlertController *alert = [UIAlertController
-                                  alertControllerWithTitle:@""
-                                  message:message
-                                  preferredStyle:UIAlertControllerStyleAlert];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [alert dismissViewControllerAnimated:YES completion:nil];
-    });
-}
-
 #pragma mark -
 /**
  *  전면광고 요청이 성공에 대한 알림
@@ -147,7 +134,6 @@
  */
 - (void)alInterstitialAd:(ALInterstitialAd *)interstitialAd didFailedAdAtPlatform:(ALMEDIATION_PLATFORM)platform
 {
-    [self showAlertController:@"didFailedAd"];
     NSLog(@"didFailedAdAtPlatform : %zd", platform);
 }
 
@@ -184,10 +170,8 @@
  */
 - (void)alAdBannerView:(ALAdBannerView *)bannerView didFailedAdAtPlatform:(ALMEDIATION_PLATFORM)platform
 {
-    [self showAlertController:@"bannerView failedAd"];
     NSLog(@"bannerView failedAd : %@", [ALMediationDefine nameOfPlatform:platform]);
     //로그성 코드 처리 부분입니다.
-    
 }
 
 /**
