@@ -62,7 +62,9 @@
 // 띠배너 타입으로 요청
 - (void)startBannerRequestWithAdlibKey:(NSString *)key
                             bannerSize:(CGSize)bannerSize;
-
+// 300x250 타입으로 요청
+- (void)startHalfRequestWithAdlibKey:(NSString *)key
+                            bannerSize:(CGSize)bannerSize;
 // 전면배너 타입으로 요청
 - (void)startInterstitialRequestWithAdlibKey:(NSString *)key
                                   bannerSize:(CGSize)bannerSize;

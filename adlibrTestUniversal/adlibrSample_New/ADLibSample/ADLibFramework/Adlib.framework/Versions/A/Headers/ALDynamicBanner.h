@@ -68,6 +68,9 @@ typedef NS_ENUM(NSInteger, ALDynamicBannerState){
 // 띠 배너 요청
 - (BOOL)loadRequestBanner;
 
+// 300x250 요청
+- (BOOL)loadRequestHalf;
+
 // 전면 배너 요청
 - (BOOL)loadRequestInterstitial;
 

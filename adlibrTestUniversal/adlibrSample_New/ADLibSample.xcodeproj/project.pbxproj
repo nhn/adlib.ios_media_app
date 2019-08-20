@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332C14FD22FC015100D68C9D /* HalfMediationSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 332C14FC22FC015100D68C9D /* HalfMediationSampleController.m */; };
 		9DDD309120CA766B00BC6872 /* Adlib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DDD308F20CA766B00BC6872 /* Adlib.bundle */; };
 		9DDD309220CA766B00BC6872 /* Adlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDD309020CA766B00BC6872 /* Adlib.framework */; };
 		B049BA7B1E97219700271114 /* CS004.m in Sources */ = {isa = PBXBuildFile; fileRef = B049BA7A1E97219700271114 /* CS004.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		332C14FB22FC015100D68C9D /* HalfMediationSampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfMediationSampleController.h; sourceTree = "<group>"; };
+		332C14FC22FC015100D68C9D /* HalfMediationSampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfMediationSampleController.m; sourceTree = "<group>"; };
 		9DDD308F20CA766B00BC6872 /* Adlib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Adlib.bundle; sourceTree = "<group>"; };
 		9DDD309020CA766B00BC6872 /* Adlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adlib.framework; sourceTree = "<group>"; };
 		B049BA791E97219700271114 /* CS004.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CS004.h; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				B08C82921E9489B800BB4085 /* AdlibSampleController.m */,
 				B08C82931E9489B800BB4085 /* MediationSampleController.h */,
 				B08C82941E9489B800BB4085 /* MediationSampleController.m */,
+				332C14FB22FC015100D68C9D /* HalfMediationSampleController.h */,
+				332C14FC22FC015100D68C9D /* HalfMediationSampleController.m */,
 			);
 			path = BannerSample;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -290,6 +296,7 @@
 				B08C82731E94884100BB4085 /* CSIndexTableViewController.m in Sources */,
 				B08C82BE1E9489B800BB4085 /* MediationSampleController.m in Sources */,
 				B0ED41E91D6429D900D4774E /* main.m in Sources */,
+				332C14FD22FC015100D68C9D /* HalfMediationSampleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

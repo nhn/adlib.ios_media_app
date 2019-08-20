@@ -37,7 +37,6 @@
 
 @end
 
-
 typedef NS_ENUM(NSInteger, AL_ADVIEW_VERTICAL_ALIGN) {
     AL_ADVIEW_VERTICAL_ALIGN_BOTTOM = 0, //DEFAULT
     AL_ADVIEW_VERTICAL_ALIGN_TOP,
@@ -68,6 +67,8 @@ typedef NS_ENUM(NSInteger, AL_ADVIEW_VERTICAL_ALIGN) {
 // 미디에이션 플랫폼 모두 실패한 경우에 대한 백필뷰
 @property (nonatomic, strong) UIView *backFillView;
 
+// 배너 사이즈 설정 
+@property (nonatomic) AL_SIZE bannerSize;
 
 - (void)setKey:(NSString *)key forPlatform:(ALMEDIATION_PLATFORM)platform;
 

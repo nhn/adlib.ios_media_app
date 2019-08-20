@@ -67,6 +67,15 @@ typedef NS_ENUM(NSInteger, ALMEDIATION_STATE) {
     
 };
 
+
+typedef NS_ENUM(NSInteger, AL_SIZE) {
+    
+    AL_SIZE_NONE              = 0,
+    AL_SIZE_BANNER,              // 320x50
+    AL_SIZE_INTERSTITIAL,        // 320x480
+    AL_SIZE_HALF,                // 300x250
+};
+
 @protocol ALMediationInterstitialProtocol <NSObject>
 
 // 해당 플래폼 광고에 전면광고 요청을 처리합니다.

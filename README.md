@@ -2,6 +2,7 @@
 
 |버전|내용|
 |---|---|
+|5.1.0.0<br/>(2019.08.20)|300*250 (하프 배너) 광고 영역 추가 <br/>SDK 내부 개선|
 |5.0.0.2<br/>(2019.04.05)|SDK 내부 개선<br/>|
 |5.0.0.0<br/>(2018.06.08)|Bitcode 지원<br/>미디에이션 워터폴 방식 변경(광고 노출 성공하는 경우 스케쥴 index 초기화)<br/>중지된 미디에이션 삭제<br/>샘플 프로젝트 업데이트|
 
@@ -176,6 +177,11 @@ ALAdBannerViewDelegate 프로토콜을 구현한 delegate를 아래와 같이 �
     return YES;
 }
 ```
+## 애드립 배너 연동(하프 배너)
+기본적으로는 위에서 설명한 애드립 띠배너 요청과 동일하나 추가로 배너 사이즈 설정 코드가 필요합니다.
+```objectivec
+_bannerView.bannerSize = AL_SIZE_HALF; // 하프 배너 설정
+```
 
 ## 애드립 배너 연동(전면 배너)
 
@@ -300,6 +306,35 @@ ALInterstitialAdDelegate 프로토콜을 구현한 delegate를 아래와 같이 
 
     _bannerView.isTestMode = YES;
     _bannerView.repeatLoop = NO;
+
+    [_bannerView startAdViewWithKey:ADLIB_APP_KEY
+                 rootViewController:self
+                         adDelegate:self];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+
+    [_bannerView stopAdView];
+}
+```
+
+### 단계2. 미디에이션 하프 배너 요청
+
+기본적으로는 위에서 설명한 애드립 하프배너 요청과 동일하나 추가로 광고 키값 설정 코드가 필요합니다.
+
+```objectivec
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    // 미디에이션 플랫폼 하프배너 키설정 
+    [_bannerView setKey:ADMOB_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
+
+    _bannerView.isTestMode = YES;
+    _bannerView.repeatLoop = NO;
+	_bannerView.bannerSize = AL_SIZE_HALF; // 하프 배너 설정
 
     [_bannerView startAdViewWithKey:ADLIB_APP_KEY
                  rootViewController:self

@@ -84,7 +84,11 @@
     }
     
     if (_adView == nil) {
-        AdFitBannerAdView *adView = [[AdFitBannerAdView alloc] initWithClientId:key adUnitSize:@"320*50"];
+        NSString *adSize = @"320x50";   // AL_SIZE_BANNER
+        if (self.bannerContainerView.bannerSize == AL_SIZE_HALF) {
+            adSize = @"300x250";
+        }
+        AdFitBannerAdView *adView = [[AdFitBannerAdView alloc] initWithClientId:key adUnitSize:adSize];
         self.adView = adView;
     }
     

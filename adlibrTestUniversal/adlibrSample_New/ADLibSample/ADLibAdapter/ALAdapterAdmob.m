@@ -38,7 +38,10 @@
 {
     if (_adView == nil) {
         
-        GADAdSize gadSize = kGADAdSizeBanner;
+        GADAdSize gadSize = kGADAdSizeBanner;   // AL_SIZE_BANNER
+        if (self.bannerContainerView.bannerSize == AL_SIZE_HALF) {
+            gadSize = kGADAdSizeMediumRectangle;
+        }
         GADBannerView *adView = [[GADBannerView alloc] initWithAdSize:gadSize];
         _adView = adView;
         _adView.frame = CGRectMake(0,
