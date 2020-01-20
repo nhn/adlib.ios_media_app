@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DA2F9CC23D53BA700B4DCF0 /* Adlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA2F9CA23D53BA700B4DCF0 /* Adlib.framework */; };
+		2DA2F9CD23D53BA700B4DCF0 /* Adlib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2F9CB23D53BA700B4DCF0 /* Adlib.bundle */; };
 		332C14FD22FC015100D68C9D /* HalfMediationSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 332C14FC22FC015100D68C9D /* HalfMediationSampleController.m */; };
-		9DDD309120CA766B00BC6872 /* Adlib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9DDD308F20CA766B00BC6872 /* Adlib.bundle */; };
-		9DDD309220CA766B00BC6872 /* Adlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDD309020CA766B00BC6872 /* Adlib.framework */; };
 		B049BA7B1E97219700271114 /* CS004.m in Sources */ = {isa = PBXBuildFile; fileRef = B049BA7A1E97219700271114 /* CS004.m */; };
 		B049BA7F1E97262600271114 /* SampleDynamicBannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B049BA7E1E97262600271114 /* SampleDynamicBannerController.m */; };
 		B08C826D1E94884100BB4085 /* CS001.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C82301E94884100BB4085 /* CS001.m */; };
@@ -27,10 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DA2F9CA23D53BA700B4DCF0 /* Adlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adlib.framework; sourceTree = "<group>"; };
+		2DA2F9CB23D53BA700B4DCF0 /* Adlib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Adlib.bundle; sourceTree = "<group>"; };
 		332C14FB22FC015100D68C9D /* HalfMediationSampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfMediationSampleController.h; sourceTree = "<group>"; };
 		332C14FC22FC015100D68C9D /* HalfMediationSampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfMediationSampleController.m; sourceTree = "<group>"; };
-		9DDD308F20CA766B00BC6872 /* Adlib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Adlib.bundle; sourceTree = "<group>"; };
-		9DDD309020CA766B00BC6872 /* Adlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adlib.framework; sourceTree = "<group>"; };
 		B049BA791E97219700271114 /* CS004.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CS004.h; sourceTree = "<group>"; };
 		B049BA7A1E97219700271114 /* CS004.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CS004.m; sourceTree = "<group>"; };
 		B049BA7D1E97262600271114 /* SampleDynamicBannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleDynamicBannerController.h; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DDD309220CA766B00BC6872 /* Adlib.framework in Frameworks */,
+				2DA2F9CC23D53BA700B4DCF0 /* Adlib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,8 +207,8 @@
 		B0ED420C1D64349D00D4774E /* ADLibFramework */ = {
 			isa = PBXGroup;
 			children = (
-				9DDD308F20CA766B00BC6872 /* Adlib.bundle */,
-				9DDD309020CA766B00BC6872 /* Adlib.framework */,
+				2DA2F9CB23D53BA700B4DCF0 /* Adlib.bundle */,
+				2DA2F9CA23D53BA700B4DCF0 /* Adlib.framework */,
 			);
 			path = ADLibFramework;
 			sourceTree = "<group>";
@@ -272,9 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0ED41F71D6429D900D4774E /* LaunchScreen.storyboard in Resources */,
-				9DDD309120CA766B00BC6872 /* Adlib.bundle in Resources */,
 				B0ED41F41D6429D900D4774E /* Assets.xcassets in Resources */,
 				B08C82741E94884100BB4085 /* CSStoryboard.storyboard in Resources */,
+				2DA2F9CD23D53BA700B4DCF0 /* Adlib.bundle in Resources */,
 				B0ED41F21D6429D900D4774E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
