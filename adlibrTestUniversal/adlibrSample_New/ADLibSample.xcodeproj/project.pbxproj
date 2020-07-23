@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DEF193223D53FBF00FC6BB1 /* Adlib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DEF193023D53FBF00FC6BB1 /* Adlib.bundle */; };
-		2DEF193323D53FBF00FC6BB1 /* Adlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEF193123D53FBF00FC6BB1 /* Adlib.framework */; };
-		332C14FD22FC015100D68C9D /* HalfMediationSampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 332C14FC22FC015100D68C9D /* HalfMediationSampleController.m */; };
+		2DBE72C124C562D30029467C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE72C024C562D30029467C /* ViewController.m */; };
+		2DBE72C724C56B270029467C /* HalfAdlibSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE72C624C56B270029467C /* HalfAdlibSampleViewController.m */; };
+		2DBE72CB24C576EB0029467C /* ALAdapterAdmobTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE72CA24C576EB0029467C /* ALAdapterAdmobTest.m */; };
+		2DBE72CE24C577F40029467C /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBE72CD24C577F40029467C /* GoogleMobileAds.framework */; };
+		2DBE72D924C5A0810029467C /* Adlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBE72D724C5A0800029467C /* Adlib.framework */; };
+		2DBE72DA24C5A0810029467C /* Adlib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DBE72D824C5A0810029467C /* Adlib.bundle */; };
 		B049BA7B1E97219700271114 /* CS004.m in Sources */ = {isa = PBXBuildFile; fileRef = B049BA7A1E97219700271114 /* CS004.m */; };
 		B049BA7F1E97262600271114 /* SampleDynamicBannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B049BA7E1E97262600271114 /* SampleDynamicBannerController.m */; };
 		B08C826D1E94884100BB4085 /* CS001.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C82301E94884100BB4085 /* CS001.m */; };
@@ -27,10 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DEF193023D53FBF00FC6BB1 /* Adlib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Adlib.bundle; sourceTree = "<group>"; };
-		2DEF193123D53FBF00FC6BB1 /* Adlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adlib.framework; sourceTree = "<group>"; };
-		332C14FB22FC015100D68C9D /* HalfMediationSampleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfMediationSampleController.h; sourceTree = "<group>"; };
-		332C14FC22FC015100D68C9D /* HalfMediationSampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfMediationSampleController.m; sourceTree = "<group>"; };
+		2DBE72BF24C562D30029467C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2DBE72C024C562D30029467C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2DBE72C524C56B270029467C /* HalfAdlibSampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfAdlibSampleViewController.h; sourceTree = "<group>"; };
+		2DBE72C624C56B270029467C /* HalfAdlibSampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfAdlibSampleViewController.m; sourceTree = "<group>"; };
+		2DBE72C924C576EB0029467C /* ALAdapterAdmobTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALAdapterAdmobTest.h; sourceTree = "<group>"; };
+		2DBE72CA24C576EB0029467C /* ALAdapterAdmobTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALAdapterAdmobTest.m; sourceTree = "<group>"; };
+		2DBE72CD24C577F40029467C /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		2DBE72D724C5A0800029467C /* Adlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adlib.framework; sourceTree = "<group>"; };
+		2DBE72D824C5A0810029467C /* Adlib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Adlib.bundle; sourceTree = "<group>"; };
 		B049BA791E97219700271114 /* CS004.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CS004.h; sourceTree = "<group>"; };
 		B049BA7A1E97219700271114 /* CS004.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CS004.m; sourceTree = "<group>"; };
 		B049BA7D1E97262600271114 /* SampleDynamicBannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleDynamicBannerController.h; sourceTree = "<group>"; };
@@ -65,13 +73,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DEF193323D53FBF00FC6BB1 /* Adlib.framework in Frameworks */,
+				2DBE72CE24C577F40029467C /* GoogleMobileAds.framework in Frameworks */,
+				2DBE72D924C5A0810029467C /* Adlib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DBE72C824C576D80029467C /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				2DBE72C924C576EB0029467C /* ALAdapterAdmobTest.h */,
+				2DBE72CA24C576EB0029467C /* ALAdapterAdmobTest.m */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		2DBE72CC24C577E40029467C /* GoogleFramework */ = {
+			isa = PBXGroup;
+			children = (
+				2DBE72CD24C577F40029467C /* GoogleMobileAds.framework */,
+			);
+			path = GoogleFramework;
+			sourceTree = "<group>";
+		};
 		B049BA761E97217800271114 /* CS004 */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +153,7 @@
 		B08C823F1E94884100BB4085 /* ADLibSampleSrc */ = {
 			isa = PBXGroup;
 			children = (
+				2DBE72C824C576D80029467C /* Adapter */,
 				B08C82901E9489B800BB4085 /* BannerSample */,
 			);
 			path = ADLibSampleSrc;
@@ -145,10 +172,10 @@
 			children = (
 				B08C82911E9489B800BB4085 /* AdlibSampleController.h */,
 				B08C82921E9489B800BB4085 /* AdlibSampleController.m */,
+				2DBE72C524C56B270029467C /* HalfAdlibSampleViewController.h */,
+				2DBE72C624C56B270029467C /* HalfAdlibSampleViewController.m */,
 				B08C82931E9489B800BB4085 /* MediationSampleController.h */,
 				B08C82941E9489B800BB4085 /* MediationSampleController.m */,
-				332C14FB22FC015100D68C9D /* HalfMediationSampleController.h */,
-				332C14FC22FC015100D68C9D /* HalfMediationSampleController.m */,
 			);
 			path = BannerSample;
 			sourceTree = "<group>";
@@ -173,6 +200,7 @@
 		B0ED41E61D6429D900D4774E /* ADLibSample */ = {
 			isa = PBXGroup;
 			children = (
+				2DBE72CC24C577E40029467C /* GoogleFramework */,
 				B0ED420C1D64349D00D4774E /* ADLibFramework */,
 				B0ED42051D64349D00D4774E /* ADLibAdapter */,
 				B0ED41EA1D6429D900D4774E /* AppDelegate.h */,
@@ -185,6 +213,8 @@
 				B0ED41F51D6429D900D4774E /* LaunchScreen.storyboard */,
 				B0ED41F81D6429D900D4774E /* Info.plist */,
 				B0ED41E71D6429D900D4774E /* Supporting Files */,
+				2DBE72BF24C562D30029467C /* ViewController.h */,
+				2DBE72C024C562D30029467C /* ViewController.m */,
 			);
 			path = ADLibSample;
 			sourceTree = "<group>";
@@ -207,8 +237,8 @@
 		B0ED420C1D64349D00D4774E /* ADLibFramework */ = {
 			isa = PBXGroup;
 			children = (
-				2DEF193023D53FBF00FC6BB1 /* Adlib.bundle */,
-				2DEF193123D53FBF00FC6BB1 /* Adlib.framework */,
+				2DBE72D824C5A0810029467C /* Adlib.bundle */,
+				2DBE72D724C5A0800029467C /* Adlib.framework */,
 			);
 			path = ADLibFramework;
 			sourceTree = "<group>";
@@ -243,7 +273,8 @@
 				TargetAttributes = {
 					B0ED41E31D6429D900D4774E = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = CWXRLAGBKX;
+						DevelopmentTeam = F5NU2PA3PK;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -274,7 +305,7 @@
 				B0ED41F71D6429D900D4774E /* LaunchScreen.storyboard in Resources */,
 				B0ED41F41D6429D900D4774E /* Assets.xcassets in Resources */,
 				B08C82741E94884100BB4085 /* CSStoryboard.storyboard in Resources */,
-				2DEF193223D53FBF00FC6BB1 /* Adlib.bundle in Resources */,
+				2DBE72DA24C5A0810029467C /* Adlib.bundle in Resources */,
 				B0ED41F21D6429D900D4774E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,17 +317,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DBE72CB24C576EB0029467C /* ALAdapterAdmobTest.m in Sources */,
 				B08C826D1E94884100BB4085 /* CS001.m in Sources */,
 				B049BA7B1E97219700271114 /* CS004.m in Sources */,
 				B0ED41EC1D6429D900D4774E /* AppDelegate.m in Sources */,
 				B08C826F1E94884100BB4085 /* CS002.m in Sources */,
+				2DBE72C724C56B270029467C /* HalfAdlibSampleViewController.m in Sources */,
 				B049BA7F1E97262600271114 /* SampleDynamicBannerController.m in Sources */,
 				B08C82711E94884100BB4085 /* CS003.m in Sources */,
+				2DBE72C124C562D30029467C /* ViewController.m in Sources */,
 				B08C82BD1E9489B800BB4085 /* AdlibSampleController.m in Sources */,
 				B08C82731E94884100BB4085 /* CSIndexTableViewController.m in Sources */,
 				B08C82BE1E9489B800BB4085 /* MediationSampleController.m in Sources */,
 				B0ED41E91D6429D900D4774E /* main.m in Sources */,
-				332C14FD22FC015100D68C9D /* HalfMediationSampleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,16 +461,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CWXRLAGBKX;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = F5NU2PA3PK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ADLibSample/ADLibFramework",
 					"$(PROJECT_DIR)/ADLibSample/ADPlatformLibs/admob",
+					"$(PROJECT_DIR)/ADLibSample/GoogleFramework",
 				);
 				INFOPLIST_FILE = ADLibSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adlibr.ADLibSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = enterprise_ADLib_ih_dist_191112;
 			};
 			name = Debug;
 		};
@@ -445,16 +482,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CWXRLAGBKX;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = F5NU2PA3PK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ADLibSample/ADLibFramework",
 					"$(PROJECT_DIR)/ADLibSample/ADPlatformLibs/admob",
+					"$(PROJECT_DIR)/ADLibSample/GoogleFramework",
 				);
 				INFOPLIST_FILE = ADLibSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adlibr.ADLibSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = enterprise_ADLib_ih_dist_191112;
 			};
 			name = Release;
 		};

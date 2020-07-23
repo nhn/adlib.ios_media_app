@@ -10,6 +10,7 @@
 
 #import <Adlib/ADLibBanner.h>
 #import "SampleKey.h"
+#import "ALAdapterAdmobTest.h"
 
 //#import "ALAdapterAdmob.h"
 //#import "ALAdapterFacebook.h"
@@ -22,40 +23,72 @@
 
 @interface MediationSampleController () <ALInterstitialAdDelegate, ALAdBannerViewDelegate>
 
-@property (nonatomic) IBOutlet ALAdBannerView *bannerView;
+@property (nonatomic, strong) ALAdBannerView *bannerView;
 @property (nonatomic, strong) ALInterstitialAd *interstitialAd;
+
+@property (nonatomic, strong) UIButton *button;
+@property (nonatomic, readonly) BOOL isHalf;
+@property (nonatomic, readonly) NSString *mTitle;
 
 @end
 
 @implementation MediationSampleController
 
+- (instancetype)initWithTitle:(NSString *)aTitle isHalf:(BOOL)aIsHalf
+{
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        _mTitle = aTitle;
+        _isHalf = aIsHalf;
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    return [self initWithTitle:@"" isHalf:NO];
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    return [self initWithTitle:@"" isHalf:NO];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
-        [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    [self setInterstitialADButton];
+
+    //InterstitialAD
+    [self setIntersAD];
+    
+    //LineBanner AD
+    [self setBannerAD];
+    
+    [self.view addSubview:_bannerView];
+    
+    if (@available(iOS 11.0, *)) {
+        [[_bannerView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor] setActive:YES];
+    } else {
+        [[_bannerView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
+    }
+    [[_bannerView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor] setActive:YES];
+    [[_bannerView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor] setActive:YES];
+    if (_isHalf) {
+        [[_bannerView.heightAnchor constraintEqualToConstant:250] setActive:YES];
+    } else {
+        [[_bannerView.heightAnchor constraintEqualToConstant:50] setActive:YES];
     }
     
-    // 미디에이션 플랫폼 등록
-    //[ALMediation registerPlatform:ALMEDIATION_PLATFORM_ADMOB withClass:[ALAdapterAdmob class]];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
+    [self setTitle:_mTitle];
+    [self loadAdlibAdvert];
     
-    // 미디에이션 플랫폼 띠배너 키설정
-    //[_bannerView setKey:ADMOB_BAND_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
-    
-    _bannerView.isTestMode = YES;
-    _bannerView.repeatLoop = YES;
-    
-    //앱 업데이트시에는 발급받으신 키로 교체하세요.
-    NSString *appKey = ADLIB_APP_KEY;
-    
-    [_bannerView startAdViewWithKey:appKey
-                 rootViewController:self
-                         adDelegate:self];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -65,16 +98,57 @@
     [_bannerView stopAdView];
 }
 
-- (IBAction)requestIntersAd:(id)sender
+- (void)loadAdlibAdvert
 {
-    ALInterstitialAd *interstitialAd = [[ALInterstitialAd alloc] initWithRootViewController:self];
-    self.interstitialAd = interstitialAd;
+    //앱 업데이트시에는 발급받으신 키로 교체하세요.
+    NSString *appKey = ADLIB_APP_KEY;
     
+    [_bannerView startAdViewWithKey:appKey
+                 rootViewController:self
+                         adDelegate:self];
+}
+
+- (void)setInterstitialADButton
+{
+    _button = [[UIButton alloc] initWithFrame:CGRectZero];
+    [_button setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_button setTitle:@"Request InterstitialAD" forState:UIControlStateNormal];
+    [_button setBackgroundColor:[UIColor blueColor]];
+    [_button.titleLabel setTextColor:[UIColor blackColor]];
+    [_button addTarget:self action:@selector(requestIntersAd) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_button];
+    [[_button.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor] setActive:YES];
+    [[_button.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor] setActive:YES];
+}
+
+- (void)setIntersAD
+{
+    // 미디에이션 플랫폼 등록
+    [ALMediation registerPlatform:ALMEDIATION_PLATFORM_ADMOB withClass:[ALAdapterAdmobTest class]];
+    
+    _interstitialAd = [[ALInterstitialAd alloc] initWithRootViewController:self];
     //미디에이션 플랫폼 전면배너 키설정
-    //[_interstitialAd setKey:ADMOB_INTERSTITIAL_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
-    
-    interstitialAd.isTestMode = YES;
-    
+    [_interstitialAd setKey:ADMOB_INTERSTITIAL_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
+    _interstitialAd.isTestMode = YES;
+}
+
+- (void)setBannerAD
+{
+    _bannerView = [[ALAdBannerView alloc] initWithFrame:CGRectZero];
+    [_bannerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    // 미디에이션 플랫폼 띠배너 키설정
+    [_bannerView setKey:ADMOB_BAND_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
+    _bannerView.isTestMode = YES;
+    _bannerView.repeatLoop = YES;
+    if (_isHalf) {
+        #warning - 하프 배너 사이즈로 노출을 원할 시 반드시 확인합니다.
+        _bannerView.bannerSize = AL_SIZE_HALF;  // 하프 배너 설정
+    }
+}
+
+- (void)requestIntersAd
+{
     //앱 업데이트시에는 발급받으신 키로 교체하세요.
     NSString *appKey = ADLIB_APP_KEY;
     

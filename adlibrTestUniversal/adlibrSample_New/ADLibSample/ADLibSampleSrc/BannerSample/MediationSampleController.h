@@ -10,4 +10,6 @@
 
 @interface MediationSampleController : UIViewController
 
+- (instancetype)initWithTitle:(NSString *)aTitle isHalf:(BOOL)aIsHalf NS_DESIGNATED_INITIALIZER;
+
 @end

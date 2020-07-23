@@ -12,38 +12,70 @@
 
 @interface AdlibSampleController () <ALInterstitialAdDelegate, ALAdBannerViewDelegate>
 
-@property (nonatomic) IBOutlet UIView *bannerContainerView;
-
-@property (nonatomic) ALAdBannerView *bannerView;
+@property (nonatomic, strong) ALAdBannerView *bannerView;
 @property (nonatomic, strong) ALInterstitialAd *interstitialAd;
-
+@property (nonatomic, strong) UIButton *button;
+@property (nonatomic, readonly) NSString *mTitle;
 @end
 
 
 @implementation AdlibSampleController
 
+- (instancetype)initWithTitle:(NSString *)aTitle
+{
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        _mTitle = aTitle;
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    return [self initWithTitle:@""];
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    return [self initWithTitle:@""];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
-        [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    [self setInterstitialADButton];
+    
+    //전면배너 생성하고 초기화 설정을 합니다.
+    ALInterstitialAd *interstitialAd = [[ALInterstitialAd alloc] initWithRootViewController:self];
+    self.interstitialAd = interstitialAd;
+    
+    interstitialAd.isTestMode = YES;
+    
+    
+    //배너뷰를 생성하고 초기화 설정을 합니다.
+    _bannerView = [[ALAdBannerView alloc] init];
+    [_bannerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [self.view addSubview:_bannerView];
+    
+    if (@available(iOS 11.0, *)) {
+        [[_bannerView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor] setActive:YES];
+    } else {
+        [[_bannerView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor] setActive:YES];
     }
+    [[_bannerView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor] setActive:YES];
+    [[_bannerView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor] setActive:YES];
+    [[_bannerView.heightAnchor constraintEqualToConstant:50] setActive:YES];
+    
+    [self loadAdlibAdvert];
 }
 
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-    
-    if (_bannerView) {
-        _bannerView.frame = _bannerContainerView.bounds;
-    }
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self loadAdlibAdvert];
+    [self setTitle:_mTitle];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -53,29 +85,34 @@
     [self stopAdlibAdvert];
 }
 
+- (void)setInterstitialADButton
+{
+    _button = [[UIButton alloc] initWithFrame:CGRectZero];
+    [_button setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_button setTitle:@"Request InterstitialAD" forState:UIControlStateNormal];
+    [_button setBackgroundColor:[UIColor blueColor]];
+    [_button.titleLabel setTextColor:[UIColor blackColor]];
+    [_button addTarget:self action:@selector(requestIntersAd) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_button];
+    [[_button.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor] setActive:YES];
+    [[_button.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor] setActive:YES];
+}
+
 - (void)loadAdlibAdvert
 {
-    if (_bannerView == nil){
         
-        //배너뷰를 생성하고 초기화 설정을 합니다.
-        _bannerView = [[ALAdBannerView alloc] initWithFrame:_bannerContainerView.bounds];
-        
-#warning - 광고 테스트 모드 설정값은 상용으로 배포시 반드시 확인합니다.
-        //테스트 모드를 설정할 수 있습니다.
-        _bannerView.isTestMode = YES;
-        
-        //광고 호출 완료 후 설정된 시간 이후 자동으로 다음 광고호출 갱신여부를 설정합니다.
-        //화면 전환시 에만 최초 1회 광고를 호출하려면 NO를 설정합니다.
-        //YES로 설정된 경우 화면에서 유지될 경우 일정 시간 이후 다음 광고를 자동으로 내부에서 호출하여 갱신합니다.
-        _bannerView.repeatLoop = NO;
-        
-        //광고가 없는 경우 노출할 백필 광고 뷰지정 (Optional)
-        //_bannerView.backFillView = [self al_backFillView];
-    }
+    #warning - 광고 테스트 모드 설정값은 상용으로 배포시 반드시 확인합니다.
+    //테스트 모드를 설정할 수 있습니다.
+    _bannerView.isTestMode = YES;
     
-    if (_bannerView.superview == nil) {
-        [_bannerContainerView addSubview:_bannerView];
-    }
+    //광고 호출 완료 후 설정된 시간 이후 자동으로 다음 광고호출 갱신여부를 설정합니다.
+    //화면 전환시 에만 최초 1회 광고를 호출하려면 NO를 설정합니다.
+    //YES로 설정된 경우 화면에서 유지될 경우 일정 시간 이후 다음 광고를 자동으로 내부에서 호출하여 갱신합니다.
+    _bannerView.repeatLoop = NO;
+    
+    //광고가 없는 경우 노출할 백필 광고 뷰지정 (Optional)
+//    _bannerView.backFillView = [self al_backFillView];
     
     /**
      *  배너 광고를 요청한다.
@@ -100,13 +137,8 @@
     [_bannerView stopAdView];
 }
 
-- (IBAction)requestIntersAd:(id)sender
+- (void)requestIntersAd
 {
-    ALInterstitialAd *interstitialAd = [[ALInterstitialAd alloc] initWithRootViewController:self];
-    self.interstitialAd = interstitialAd;
-    
-    interstitialAd.isTestMode = YES;
-    
     //앱 업데이트시에는 발급받으신 키로 교체하세요.
     NSString *appKey = kTEST_KEY_ADLIBHOUSE;
     
@@ -120,7 +152,7 @@
     }
 }
 
-#pragma mark -
+#pragma mark - ALInterstitialAdDelegate
 /**
  *  전면광고 요청이 성공에 대한 알림
  */
@@ -145,7 +177,7 @@
     NSLog(@"alInterstitialAdDidFailedAd");
 }
 
-#pragma mark - Band
+#pragma mark - ALAdBannerViewDelegate
 
 /**
  *  띠 배너 광고요청 재개 상태에서 내부적인 상태 변화를 통지합니다.
@@ -196,18 +228,19 @@
 {
     //애드립에서 제공하는 백필뷰 탬플릿으로 해당 뷰이외에 매체사에서 제작한 뷰를 넘겨주는 것도 가능하다.
     //애드립 백필의 경우 최하단에 배경 이미지 뷰 그 상단에 웹뷰로 구성되며 아래 세터 함수를 호출하지 않을 경우 기본 hidden상태이다.
-    ALAdBackFillView *backFillView = [[ALAdBackFillView alloc] initWithFrame:_bannerContainerView.bounds];
-    
+//    ALAdBackFillView *backFillView = [[ALAdBackFillView alloc] initWithFrame:_bannerContainerView.bounds];
+
     //배경 이미지 지정
-    UIImage *bgimg = nil;
-    [backFillView setBackgroundImage:bgimg];
-    
+//    UIImage *bgimg = nil;
+//    [backFillView setBackgroundImage:bgimg];
+
     //띠배너 영역에 표시할 웹페이지 주소
     //개발사에서 해당 페이지의 html소스 내용을 유동적으로 바꾸어 관리할수 있다.
-    NSURL *url = [NSURL URLWithString:@"http://----"];
-    [backFillView loadBackFillUrl:url];
-    
-    return backFillView;
+//    NSURL *url = [NSURL URLWithString:@"http://----"];
+//    [backFillView loadBackFillUrl:url];
+
+//    return backFillView;
+    return nil;
 }
 
 @end

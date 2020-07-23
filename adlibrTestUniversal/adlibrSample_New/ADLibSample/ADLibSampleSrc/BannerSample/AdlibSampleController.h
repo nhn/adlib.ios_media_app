@@ -10,4 +10,6 @@
 
 @interface AdlibSampleController : UIViewController
 
+- (instancetype)initWithTitle:(NSString *)aTitle NS_DESIGNATED_INITIALIZER;
+
 @end
