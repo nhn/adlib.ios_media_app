@@ -2,6 +2,7 @@
 
 |버전|내용|
 |---|---|
+|5.1.2<br/>(2020.07.24)|UIWebView -> WKWebView 전환|
 |5.1.1<br/>(2020.01.20)|전면배너 iOS 13 Present FullScreen 수정|
 |5.1.0.0<br/>(2019.08.20)|300*250 (하프 배너) 광고 영역 추가 <br/>SDK 내부 개선|
 |5.0.0.2<br/>(2019.04.05)|SDK 내부 개선<br/>|
@@ -45,9 +46,9 @@ Application Info.plist 파일의 해당 항목을 설정을 하지않을 경우 
 </dict>
 ```
 
-## Bitcode 지원
+## Bitcode OFF
 
-SDK v5.000 이상 버전에서 부터는 비트코드 지원 프레임워크 형태로 제공됩니다.
+Enable Bitcode = NO
 
 ## ADLib SDK 설치 방법
 
@@ -70,6 +71,19 @@ Linking - Other Linker Flags 항목에 -ObjC 를 추가합니다.
 
 ## 애드립 배너 연동(띠 배너)
 
+### 초기화
+
+```objectivec
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    [ADLibSDK init:self.window];
+    
+    // ....
+    
+    return YES;
+}
+```
+
 ### 단계1. 배너 연동을 위한 초기화
 
 애드립 배너를 연동할 ViewController에 애드립 배너 delegate를 선언하고, 애드립 배너 객체들을 선언합니다.
@@ -78,7 +92,7 @@ Linking - Other Linker Flags 항목에 -ObjC 를 추가합니다.
 #import "AdlibSampleController.h"
 #import <Adlib/ADLibBanner.h>
 
-#define ADLIB_APP_KEY @"550787410cf2833XXXXXXX"
+#define ADLIB_APP_KEY @"5af500b384ae8f4bb4f8ab2e"  //TestKey
 
 @interface AdlibSampleController () <ALInterstitialAdDelegate, ALAdBannerViewDelegate>
 
