@@ -1,4 +1,4 @@
-//  Adlib SDK version 5.1.2
+//  Adlib SDK version 5.1.3
 
 #import <Adlib/ADLibBanner.h>
 #import <UIKit/UIKit.h>
@@ -7,6 +7,6 @@
 
 + (NSString *)sdkVersion;
 
-+ (void)init:(UIWindow *)window;
++ (void)config:(UIWindow *)window;
 
 @end

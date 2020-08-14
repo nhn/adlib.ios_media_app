@@ -11,8 +11,6 @@
 		2DBE72C724C56B270029467C /* HalfAdlibSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE72C624C56B270029467C /* HalfAdlibSampleViewController.m */; };
 		2DBE72CB24C576EB0029467C /* ALAdapterAdmobTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBE72CA24C576EB0029467C /* ALAdapterAdmobTest.m */; };
 		2DBE72CE24C577F40029467C /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBE72CD24C577F40029467C /* GoogleMobileAds.framework */; };
-		2DBE72D924C5A0810029467C /* Adlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBE72D724C5A0800029467C /* Adlib.framework */; };
-		2DBE72DA24C5A0810029467C /* Adlib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DBE72D824C5A0810029467C /* Adlib.bundle */; };
 		B049BA7B1E97219700271114 /* CS004.m in Sources */ = {isa = PBXBuildFile; fileRef = B049BA7A1E97219700271114 /* CS004.m */; };
 		B049BA7F1E97262600271114 /* SampleDynamicBannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B049BA7E1E97262600271114 /* SampleDynamicBannerController.m */; };
 		B08C826D1E94884100BB4085 /* CS001.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C82301E94884100BB4085 /* CS001.m */; };
@@ -27,6 +25,8 @@
 		B0ED41F21D6429D900D4774E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED41F01D6429D900D4774E /* Main.storyboard */; };
 		B0ED41F41D6429D900D4774E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0ED41F31D6429D900D4774E /* Assets.xcassets */; };
 		B0ED41F71D6429D900D4774E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED41F51D6429D900D4774E /* LaunchScreen.storyboard */; };
+		D93651E424E6624E00A49630 /* Adlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93651E224E6624E00A49630 /* Adlib.framework */; };
+		D93651E524E6624E00A49630 /* Adlib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D93651E324E6624E00A49630 /* Adlib.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,6 @@
 		2DBE72C924C576EB0029467C /* ALAdapterAdmobTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALAdapterAdmobTest.h; sourceTree = "<group>"; };
 		2DBE72CA24C576EB0029467C /* ALAdapterAdmobTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ALAdapterAdmobTest.m; sourceTree = "<group>"; };
 		2DBE72CD24C577F40029467C /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		2DBE72D724C5A0800029467C /* Adlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adlib.framework; sourceTree = "<group>"; };
-		2DBE72D824C5A0810029467C /* Adlib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Adlib.bundle; sourceTree = "<group>"; };
 		B049BA791E97219700271114 /* CS004.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CS004.h; sourceTree = "<group>"; };
 		B049BA7A1E97219700271114 /* CS004.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CS004.m; sourceTree = "<group>"; };
 		B049BA7D1E97262600271114 /* SampleDynamicBannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleDynamicBannerController.h; sourceTree = "<group>"; };
@@ -66,6 +64,8 @@
 		B0ED41F31D6429D900D4774E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0ED41F61D6429D900D4774E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0ED41F81D6429D900D4774E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D93651E224E6624E00A49630 /* Adlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adlib.framework; sourceTree = "<group>"; };
+		D93651E324E6624E00A49630 /* Adlib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Adlib.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DBE72CE24C577F40029467C /* GoogleMobileAds.framework in Frameworks */,
-				2DBE72D924C5A0810029467C /* Adlib.framework in Frameworks */,
+				D93651E424E6624E00A49630 /* Adlib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +237,8 @@
 		B0ED420C1D64349D00D4774E /* ADLibFramework */ = {
 			isa = PBXGroup;
 			children = (
-				2DBE72D824C5A0810029467C /* Adlib.bundle */,
-				2DBE72D724C5A0800029467C /* Adlib.framework */,
+				D93651E324E6624E00A49630 /* Adlib.bundle */,
+				D93651E224E6624E00A49630 /* Adlib.framework */,
 			);
 			path = ADLibFramework;
 			sourceTree = "<group>";
@@ -305,7 +305,7 @@
 				B0ED41F71D6429D900D4774E /* LaunchScreen.storyboard in Resources */,
 				B0ED41F41D6429D900D4774E /* Assets.xcassets in Resources */,
 				B08C82741E94884100BB4085 /* CSStoryboard.storyboard in Resources */,
-				2DBE72DA24C5A0810029467C /* Adlib.bundle in Resources */,
+				D93651E524E6624E00A49630 /* Adlib.bundle in Resources */,
 				B0ED41F21D6429D900D4774E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
