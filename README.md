@@ -76,12 +76,27 @@ Linking - Other Linker Flags 항목에 -ObjC 를 추가합니다.
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [ADLibSDK init:self.window];
+    [ADLibSDK config:self.window];
     
     // ....
     
     return YES;
 }
+```
+
+```swift
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+	window = UIWindow(frame: UIScreen.main.bounds)
+
+	ADLibSDK.config(self.window)
+
+	// ....
+
+	return true
+}
+    
 ```
 
 ### 단계1. 배너 연동을 위한 초기화
