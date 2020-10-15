@@ -21,10 +21,10 @@
 |플랫폼|버전|SDK 다운로드|
 |---|:---:|:---:|
 |Admixer|v1.4.3|<a href="http://admixer.co.kr/" target="_blank">다운로드</a>|
-|Adfit|v3.0.7|<a href="https://github.com/adfit/adfit-ios-sdk" target="_blank">다운로드</a>|
-|Admob|v7.43.0|<a href="https://developers.google.com/admob/ios/download" target="_blank">다운로드</a>|
+|Adfit|v3.5.3|<a href="https://github.com/adfit/adfit-ios-sdk/archive/master.zip" target="_blank">다운로드</a>|
+|Admob|v7.66.0|<a href="https://developers.google.com/admob/ios/download" target="_blank">다운로드</a>|
 |Cauly|v3.1.5|<a href="https://github.com/cauly/iOS-SDK/tree/master/" target="_blank">다운로드</a>|
-|Facebook|v5.3.1|<a href="https://developers.facebook.com/docs/audience-network/download" target="_blank">다운로드</a>|
+|Facebook|v6.0.0|<a href="https://developers.facebook.com/docs/audience-network/download" target="_blank">다운로드</a>|
 |Inmobi|v7.2.7|<a href="http://www.inmobi.com/products/sdk/" target="_blank">다운로드</a>|
 
 
