@@ -2,6 +2,7 @@
 
 |버전|내용|
 |---|---|
+|5.1.4<br/>(2020.10.15)|Dynamic Framework (xcFramework 로 변경)|
 |5.1.2<br/>(2020.07.24)|UIWebView -> WKWebView 전환|
 |5.1.1<br/>(2020.01.20)|전면배너 iOS 13 Present FullScreen 수정|
 |5.1.0.0<br/>(2019.08.20)|300*250 (하프 배너) 광고 영역 추가 <br/>SDK 내부 개선|
@@ -48,18 +49,21 @@ Application Info.plist 파일의 해당 항목을 설정을 하지않을 경우 
 
 ## Bitcode OFF
 
-Enable Bitcode = NO
+Enable Bitcode = YES
 
 ## ADLib SDK 설치 방법
 
 #### 단계1. ADLibFramework 폴더 추가
 ADLibFramework 폴더를 프로젝트에 추가합니다.<br>
-해당 폴더에는 애드립 SDK 연동에 필요한 파일들을 포함되어있습니다. (Adlib.framework 파일 및  리소스 파일)
+해당 폴더에는 애드립 SDK 연동에 필요한 파일들을 포함되어있습니다. (Adlib.xcframework 파일 및  리소스 파일)
 
-### 단계2. ADLibAdapter 폴더 추가
+### 단계2. Framework embed
+Adlib.xcframework - (Embed & Sign)
+
+### 단계3. ADLibAdapter 폴더 추가
 미디에이션을 사용할 경우 프로젝트에 추가 후 사용하실 미디에이션 플랫폼 어뎁터를 제외하고 나머지 파일들은 제거합니다.
 
-### 단계3. 광고 플랫폼 미디에이션 라이브러리 추가
+### 단계4. 광고 플랫폼 미디에이션 라이브러리 추가
 미디에이션을 사용할 경우 프로젝트에 추가할 광고 플랫폼의 라이브러리 파일을 추가합니다. <br>
 Ex.) GoogleMobileAds.framework
 
@@ -73,6 +77,8 @@ Linking - Other Linker Flags 항목에 -ObjC 를 추가합니다.
 
 ### 초기화
 
+##### objc
+
 ```objectivec
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -84,6 +90,7 @@ Linking - Other Linker Flags 항목에 -ObjC 를 추가합니다.
 }
 ```
 
+##### swift
 ```swift
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -103,9 +110,10 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 애드립 배너를 연동할 ViewController에 애드립 배너 delegate를 선언하고, 애드립 배너 객체들을 선언합니다.
 
+##### objc
 ```objectivec
 #import "AdlibSampleController.h"
-#import <Adlib/ADLibBanner.h>
+#import <Adlib/Adlib.h>
 
 #define ADLIB_APP_KEY @"5af500b384ae8f4bb4f8ab2e"  //TestKey
 
@@ -120,10 +128,19 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ...
 @end
 ```
+##### swift
+``` swift
+
+import Adlib
+
+
+```
 
 ### 단계2. 띠 배너 광고 요청 시작
 
 광고를 호출할 시점에 하단 코드처럼 요청 시작 메소드를 호출합니다.
+
+##### objc
 
 ```objectivec
 - (void)viewDidAppear:(BOOL)animated
@@ -149,11 +166,26 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
                          adDelegate:self];
 }
 ```
+##### swift
+
+``` swift 
+
+...
+
+bannerView.isTestMode = true
+bannerView.repeatLoop = true
+bannerView.repeatLoopWaitTime = 5
+bannerView.bannerSize = .BANNER
+bannerView.startAdView(withKey: "5af500b384ae8f4bb4f8ab2e", rootViewController: self, adDelegate: self)
+
+...
+```
 
 ### 단계3. 띠 배너 광고 요청 중단
 
 광고 호출을 중단할 시점에 하단 코드처럼 메소드를 호출합니다.
 
+##### objc
 ```objectivec
 - (void)viewDidDisappear:(BOOL)animated
 {
@@ -162,6 +194,18 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     [_bannerView stopAdView];
 }
 ```
+
+##### swift
+``` swift
+override func viewDidDisappear(_ animated: Bool) {
+
+super.viewDidDisappear(animated)
+
+bannerView.stopAdView()
+}
+
+``` 
+
 #### 단계4. 띠 배너 광고 Delegate 처리
 
 ALAdBannerViewDelegate 프로토콜을 구현한 delegate를 아래와 같이 구현하고, 광고 수신 성공 / 실패 여부를 확인할 수 있습니다.
@@ -209,8 +253,15 @@ ALAdBannerViewDelegate 프로토콜을 구현한 delegate를 아래와 같이 �
 ```
 ## 애드립 배너 연동(하프 배너)
 기본적으로는 위에서 설명한 애드립 띠배너 요청과 동일하나 추가로 배너 사이즈 설정 코드가 필요합니다.
+
+##### objc
 ```objectivec
 _bannerView.bannerSize = AL_SIZE_HALF; // 하프 배너 설정
+```
+
+##### swift
+``` swift
+bannerView.bannerSize = .HALF
 ```
 
 ## 애드립 배너 연동(전면 배너)
@@ -218,6 +269,8 @@ _bannerView.bannerSize = AL_SIZE_HALF; // 하프 배너 설정
 ### 단계1. 전면광고 요청
 
 전면광고를 요청할 시점에 다음과 같이 처리합니다.
+
+##### objc
 
 ```objectivec
 - (IBAction)requestIntersAd:(id)sender
@@ -231,9 +284,28 @@ _bannerView.bannerSize = AL_SIZE_HALF; // 하프 배너 설정
 }
 ```
 
+##### swift
+
+``` swift
+
+private lazy var interstitialAd: ALInterstitialAd = {
+	let ad = ALInterstitialAd(rootViewController: self)
+	return ad!
+}()
+
+private func doInterstitlaRequst() {
+	interstitialAd.isTestMode = true
+	interstitialAd .request(withKey: "5bd7ff5284ae90a4b4ccda8d", adDelegate: self)
+}
+
+
+```
+
 ### 단계2. 전면광고 요청 취소
 
 전면광고 요청 도중 취소하기 위해서는 아래와 같이 처리합니다.
+
+##### objc
 
 ```objectivec
 - (void)cancelInterstitialAdRequest
@@ -242,6 +314,21 @@ _bannerView.bannerSize = AL_SIZE_HALF; // 하프 배너 설정
         [_interstitialAd stopAdReqeust];
     }
 }
+
+```
+
+
+##### swift
+
+``` swift
+
+override func viewDidDisappear(_ animated: Bool) {
+
+	super.viewDidDisappear(animated)
+
+	interstitialAd.stopReqeust()
+}
+
 ```
 
 ### 단계3. 전면광고 Delegate 처리
