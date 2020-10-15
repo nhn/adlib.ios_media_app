@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,9 +25,23 @@
 		B0ED41F21D6429D900D4774E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED41F01D6429D900D4774E /* Main.storyboard */; };
 		B0ED41F41D6429D900D4774E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0ED41F31D6429D900D4774E /* Assets.xcassets */; };
 		B0ED41F71D6429D900D4774E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED41F51D6429D900D4774E /* LaunchScreen.storyboard */; };
-		D93651E424E6624E00A49630 /* Adlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93651E224E6624E00A49630 /* Adlib.framework */; };
-		D93651E524E6624E00A49630 /* Adlib.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D93651E324E6624E00A49630 /* Adlib.bundle */; };
+		D9C7C2862537E119004B6AE2 /* Adlib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C7C2822537DF9C004B6AE2 /* Adlib.xcframework */; };
+		D9C7C2872537E119004B6AE2 /* Adlib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9C7C2822537DF9C004B6AE2 /* Adlib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D9C7C2882537E119004B6AE2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D9C7C2872537E119004B6AE2 /* Adlib.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2DBE72BF24C562D30029467C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -64,8 +78,7 @@
 		B0ED41F31D6429D900D4774E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0ED41F61D6429D900D4774E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0ED41F81D6429D900D4774E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D93651E224E6624E00A49630 /* Adlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adlib.framework; sourceTree = "<group>"; };
-		D93651E324E6624E00A49630 /* Adlib.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Adlib.bundle; sourceTree = "<group>"; };
+		D9C7C2822537DF9C004B6AE2 /* Adlib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Adlib.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C7C2862537E119004B6AE2 /* Adlib.xcframework in Frameworks */,
 				2DBE72CE24C577F40029467C /* GoogleMobileAds.framework in Frameworks */,
-				D93651E424E6624E00A49630 /* Adlib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,8 +250,7 @@
 		B0ED420C1D64349D00D4774E /* ADLibFramework */ = {
 			isa = PBXGroup;
 			children = (
-				D93651E324E6624E00A49630 /* Adlib.bundle */,
-				D93651E224E6624E00A49630 /* Adlib.framework */,
+				D9C7C2822537DF9C004B6AE2 /* Adlib.xcframework */,
 			);
 			path = ADLibFramework;
 			sourceTree = "<group>";
@@ -253,6 +265,7 @@
 				B0ED41E01D6429D900D4774E /* Sources */,
 				B0ED41E11D6429D900D4774E /* Frameworks */,
 				B0ED41E21D6429D900D4774E /* Resources */,
+				D9C7C2882537E119004B6AE2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,7 +318,6 @@
 				B0ED41F71D6429D900D4774E /* LaunchScreen.storyboard in Resources */,
 				B0ED41F41D6429D900D4774E /* Assets.xcassets in Resources */,
 				B08C82741E94884100BB4085 /* CSStoryboard.storyboard in Resources */,
-				D93651E524E6624E00A49630 /* Adlib.bundle in Resources */,
 				B0ED41F21D6429D900D4774E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +476,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F5NU2PA3PK;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ADLibSample/ADLibFramework",
@@ -471,7 +484,10 @@
 					"$(PROJECT_DIR)/ADLibSample/GoogleFramework",
 				);
 				INFOPLIST_FILE = ADLibSample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.adlibr.ADLibSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = enterprise_ADLib_ih_dist_191112;
@@ -485,6 +501,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = F5NU2PA3PK;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ADLibSample/ADLibFramework",
@@ -492,7 +509,10 @@
 					"$(PROJECT_DIR)/ADLibSample/GoogleFramework",
 				);
 				INFOPLIST_FILE = ADLibSample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.adlibr.ADLibSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = enterprise_ADLib_ih_dist_191112;

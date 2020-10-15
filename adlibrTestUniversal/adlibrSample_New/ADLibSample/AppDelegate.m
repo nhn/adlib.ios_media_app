@@ -34,7 +34,7 @@
     //TEST Google mediation
     [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
     
-    //ADLIB CONFIG 5.1.3
+    //ADLIB CONFIG 5.1.4
     [ADLibSDK config:self.window];
     
     ViewController *vc = [[ViewController alloc] init];

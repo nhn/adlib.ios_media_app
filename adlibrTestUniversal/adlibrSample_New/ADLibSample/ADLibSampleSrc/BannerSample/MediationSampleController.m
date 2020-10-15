@@ -8,7 +8,7 @@
 
 #import "MediationSampleController.h"
 
-#import <Adlib/ADLibBanner.h>
+#import <Adlib/Adlib.h>
 #import "SampleKey.h"
 #import "ALAdapterAdmobTest.h"
 

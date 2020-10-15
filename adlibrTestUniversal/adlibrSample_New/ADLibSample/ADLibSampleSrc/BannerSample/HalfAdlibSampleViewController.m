@@ -6,7 +6,7 @@
 //
 
 #import "HalfAdlibSampleViewController.h"
-#import <Adlib/ADLibBanner.h>
+#import <Adlib/Adlib.h>
 #import "SampleKey.h"
 
 @interface HalfAdlibSampleViewController () <ALInterstitialAdDelegate, ALAdBannerViewDelegate>
