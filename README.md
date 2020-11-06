@@ -3,7 +3,7 @@
 |버전|내용|
 |---|---|
 |5.1.4<br/>(2020.10.15)|Dynamic Framework (xcFramework 로 변경)|
-|5.1.2<br/>(2020.07.24)|UIWebView -> WKWebView 전환|
+|5.1.2<br/>(2020.07.24)|UIWebView -> WKWebView 전환 __(AppDelegate 에 초기화 함수 호출 추가)__|
 |5.1.1<br/>(2020.01.20)|전면배너 iOS 13 Present FullScreen 수정|
 |5.1.0.0<br/>(2019.08.20)|300*250 (하프 배너) 광고 영역 추가 <br/>SDK 내부 개선|
 |5.0.0.2<br/>(2019.04.05)|SDK 내부 개선<br/>|
@@ -77,6 +77,8 @@ Linking - Other Linker Flags 항목에 -ObjC 를 추가합니다.
 
 ### 초기화
 
+*****
+*****
 ##### objc
 
 ```objectivec
@@ -105,6 +107,8 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
     
 ```
+*****
+*****
 
 ### 단계1. 배너 연동을 위한 초기화
 
