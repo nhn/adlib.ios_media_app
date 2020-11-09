@@ -2,6 +2,7 @@
 
 |버전|내용|
 |---|---|
+|5.1.5<br/>(2020.11.09)|AppDelegate 초기화 미 호출시, Exception 발생|
 |5.1.4<br/>(2020.10.15)|Dynamic Framework (xcFramework 로 변경)|
 |5.1.2<br/>(2020.07.24)|UIWebView -> WKWebView 전환 __(AppDelegate 에 초기화 함수 호출 추가)__|
 |5.1.1<br/>(2020.01.20)|전면배너 iOS 13 Present FullScreen 수정|
