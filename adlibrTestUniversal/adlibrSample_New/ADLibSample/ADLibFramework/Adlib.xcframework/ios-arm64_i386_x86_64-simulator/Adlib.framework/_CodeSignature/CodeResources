@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/ADLibSDK.h</key>
 		<data>
-		D6VTLIDcMsPMfkytmjXZ+ClUTXI=
+		5/oASTLVBoNAhCT7hq5KAEcPRyk=
 		</data>
 		<key>Headers/ADLibSession.h</key>
 		<data>
@@ -23,6 +23,14 @@
 		<key>Headers/ALAdBannerView.h</key>
 		<data>
 		1UqFDNm8lEJqlc/ksfJFBpdIhUc=
+		</data>
+		<key>Headers/ALAdURLRequestBuilder.h</key>
+		<data>
+		u6nuq0dA08pBS3MAsgxsNYvPIao=
+		</data>
+		<key>Headers/ALAdlibAdRequestInfo.h</key>
+		<data>
+		TdE5E5L/X0IhMr9RJfuledVlpuA=
 		</data>
 		<key>Headers/ALAdlibBannerView.h</key>
 		<data>
@@ -90,11 +98,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			D6VTLIDcMsPMfkytmjXZ+ClUTXI=
+			5/oASTLVBoNAhCT7hq5KAEcPRyk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Cn8Fix0Q5G9XljuMB0pp0WpLl4OwYZRfcF2Di7MuFgM=
+			yG5HEUy2icub7YJHrLj9d6PLASOTSLNolU3oMKAFem4=
 			</data>
 		</dict>
 		<key>Headers/ADLibSession.h</key>
@@ -128,6 +136,28 @@
 			<key>hash2</key>
 			<data>
 			ZRjveC/Gw4JiYNl80B61Rf0S8KdLQna5AVR7iE2Y1a0=
+			</data>
+		</dict>
+		<key>Headers/ALAdURLRequestBuilder.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			u6nuq0dA08pBS3MAsgxsNYvPIao=
+			</data>
+			<key>hash2</key>
+			<data>
+			bNGV6Y9I0Hmjcl7lw8kuQMmSEn59hkLEeV0hX0Sn9dA=
+			</data>
+		</dict>
+		<key>Headers/ALAdlibAdRequestInfo.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TdE5E5L/X0IhMr9RJfuledVlpuA=
+			</data>
+			<key>hash2</key>
+			<data>
+			Y/UYqO+cTp4XDNt4AHhorocyEOLlcvLsHLNCxvYF9Fo=
 			</data>
 		</dict>
 		<key>Headers/ALAdlibBannerView.h</key>

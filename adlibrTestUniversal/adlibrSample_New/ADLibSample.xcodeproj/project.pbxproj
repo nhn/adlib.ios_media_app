@@ -25,7 +25,7 @@
 		B0ED41F21D6429D900D4774E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED41F01D6429D900D4774E /* Main.storyboard */; };
 		B0ED41F41D6429D900D4774E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0ED41F31D6429D900D4774E /* Assets.xcassets */; };
 		B0ED41F71D6429D900D4774E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0ED41F51D6429D900D4774E /* LaunchScreen.storyboard */; };
-		D9D439932558E3F700C6C1CC /* Adlib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D439922558E3F700C6C1CC /* Adlib.xcframework */; };
+		D9A6B2A3255D35BE005DB6CB /* Adlib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A6B2A2255D35BE005DB6CB /* Adlib.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,7 +76,7 @@
 		B0ED41F31D6429D900D4774E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0ED41F61D6429D900D4774E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0ED41F81D6429D900D4774E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9D439922558E3F700C6C1CC /* Adlib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Adlib.xcframework; sourceTree = "<group>"; };
+		D9A6B2A2255D35BE005DB6CB /* Adlib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Adlib.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9D439932558E3F700C6C1CC /* Adlib.xcframework in Frameworks */,
+				D9A6B2A3255D35BE005DB6CB /* Adlib.xcframework in Frameworks */,
 				2DBE72CE24C577F40029467C /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,7 +248,7 @@
 		B0ED420C1D64349D00D4774E /* ADLibFramework */ = {
 			isa = PBXGroup;
 			children = (
-				D9D439922558E3F700C6C1CC /* Adlib.xcframework */,
+				D9A6B2A2255D35BE005DB6CB /* Adlib.xcframework */,
 			);
 			path = ADLibFramework;
 			sourceTree = "<group>";

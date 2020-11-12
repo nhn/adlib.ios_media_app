@@ -9,13 +9,14 @@
 #import "AdlibSampleController.h"
 #import "HalfAdlibSampleViewController.h"
 #import "MediationSampleController.h"
+#import <Adlib/ADLibSDK.h>
 
 static NSInteger ADLIB_BANNER = 0;
 static NSInteger ADLIB_HALF_BANNER = 1;
 static NSInteger ADLIB_MIDIATION_BANNER = 2;
 static NSInteger ADLIB_HALF_MIDIATION_BANNER = 3;
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource, ALAdSetConfigDelegate>
 
 @property (nonatomic, readonly) NSArray<NSString *> *menus;
 @property (nonatomic, strong) UITableView *tableView;
@@ -68,6 +69,7 @@ static NSInteger ADLIB_HALF_MIDIATION_BANNER = 3;
     [[_tableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor] setActive:YES];
     [[_tableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor] setActive:YES];
     
+    [ADLibSDK config:self.view delegate:self];
 }
 
 
@@ -116,6 +118,22 @@ static NSInteger ADLIB_HALF_MIDIATION_BANNER = 3;
                                              animated:YES];
     }
     
+}
+
+# pragma ALAdSetConfigDelegate
+
+/*
+ * AppDelegate 이후 처음 뜨는 메인 뷰컨트럴러에서 광고 노출을 원할경우
+ * [ADLibSDK config:self.view delegate:self];
+ * 콜백으로 setConfigSuccess 에서 startAdViewWithKey 호출
+ *
+ * cf) 해당 메인 뷰컨트럴러에서 [ADLibSDK config:self.view delegate:self] 호출시, AppDelegate에서는 호출 하지 않아도 됨
+ */
+- (void)setConfigSuccess
+{
+    NSLog(@"setConfigSuccess");
+    
+    //[_bannerView startAdViewWithKey:appKey rootViewController:self adDelegate:self];
 }
 
 @end

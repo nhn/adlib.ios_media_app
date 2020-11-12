@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ALAdURLRequestBuilder.h"
 
 @interface ADLibSDK : NSObject
 
 + (NSString *)sdkVersion;
 
 + (void)config:(UIWindow *)window;
+
++ (void)config:(UIView *)view delegate:(id<ALAdSetConfigDelegate>)aDelegate;
 
 @end
