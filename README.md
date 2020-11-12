@@ -2,6 +2,7 @@
 
 |버전|내용|
 |---|---|
+|5.1.6<br/>(2020.11.12)|초기 메인 뷰 컨트럴러에서 초기화 가능, 성공 콜백 추가 |
 |5.1.5<br/>(2020.11.09)|AppDelegate 초기화 미 호출시, Exception 발생|
 |5.1.4<br/>(2020.10.15)|Dynamic Framework (xcFramework 로 변경)|
 |5.1.2<br/>(2020.07.24)|UIWebView -> WKWebView 전환 __(AppDelegate 에 초기화 함수 호출 추가)__|
@@ -76,10 +77,11 @@ Linking - Other Linker Flags 항목에 -ObjC 를 추가합니다.
 
 ## 애드립 배너 연동(띠 배너)
 
-### 초기화
+*****
+*****
 
-*****
-*****
+### SDK 초기화 첫번째 방법 (AppDelegate 형식)
+
 ##### objc
 
 ```objectivec
@@ -108,8 +110,63 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
     
 ```
+
+### SDK 초기화 두번째 방법 (첫 호출되는 메인 뷰컨트럴러)
+해당 뷰 컨트럴러에서 광고를 바로 띄우고 싶을 때
+
+##### objc
+```objectivec
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	[ADLibSDK config:self.view delegate:self];
+	
+	...
+}
+
+#pragma ALAdSetConfigDelegate
+
+- (void)setConfigSuccess
+{
+    [_bannerView setIsTestMode:YES];
+    [_bannerView setRepeatLoop:YES];
+    [_bannerView setRepeatLoopWaitTime:5];
+    [_bannerView setBannerSize:AL_SIZE_BANNER];
+    [_bannerView startAdViewWithKey:@"5af500b384ae8f4bb4f8ab2e" rootViewController:self adDelegate:self];
+}
+
+@end
+```
+
+##### swift
+```swift
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        ADLibSDK.config(self.view, delegate: self)
+	
+	...
+}
+
+extension ViewController: ALAdSetConfigDelegate {
+    
+    func setConfigSuccess() {
+        bannerView.isTestMode = true
+        bannerView.repeatLoop = true
+        bannerView.repeatLoopWaitTime = 5
+        bannerView.bannerSize = .BANNER
+        bannerView.startAdView(withKey: "5af500b384ae8f4bb4f8ab2e", rootViewController: self, adDelegate: self)
+    }
+}
+```
+
 *****
 *****
+
 
 ### 단계1. 배너 연동을 위한 초기화
 
