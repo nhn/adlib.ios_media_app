@@ -20,14 +20,14 @@
 각 플랫폼의 SDK 버전은 API call 방식이 변경되지 않는한 기존의 애드립 SubView를 통해 상위, 하위 호환이 가능합니다.
 실제로 각 플랫폼의 마이너 버전 업데이트가 일어나더라도 애드립 구현부의 변경없이 업데이트 된 SDK 만 새롭게 적용하면 그대로 사용가능하며, 최소한의 구현부 수정으로 큰 수정없이 적용할 수 있도록 구성되었습니다.
 
-|플랫폼|버전|SDK 다운로드|
-|---|:---:|:---:|
-|Admixer|v1.4.3|<a href="http://admixer.co.kr/" target="_blank">다운로드</a>|
-|Adfit|v3.5.3|<a href="https://github.com/adfit/adfit-ios-sdk/archive/master.zip" target="_blank">다운로드</a>|
-|Admob|v7.66.0|<a href="https://developers.google.com/admob/ios/download" target="_blank">다운로드</a>|
-|Cauly|v3.1.5|<a href="https://github.com/cauly/iOS-SDK/tree/master/" target="_blank">다운로드</a>|
-|Facebook|v6.0.0|<a href="https://developers.facebook.com/docs/audience-network/download" target="_blank">다운로드</a>|
-|Inmobi|v7.2.7|<a href="http://www.inmobi.com/products/sdk/" target="_blank">다운로드</a>|
+|플랫폼|버전|SDK 다운로드|지원광고형식|
+|---|:---:|:---:|:---:|
+|Admixer|v2.1.0|<a href="http://admixer.co.kr/" target="_blank">다운로드</a>| 띠배너 / 전면배너 |
+|Adfit(Adam)|v3.7.0|<a href="https://github.com/adfit/adfit-ios-sdk/archive/master.zip" target="_blank">다운로드</a>| 띠배너 / 전면배너 / 하프배너 |
+|Admob|v7.66.0|<a href="https://developers.google.com/admob/ios/download" target="_blank">다운로드</a>| 띠배너 / 전면배너 / 하프배너 |
+|Cauly|v3.1.11|<a href="https://github.com/cauly/iOS-SDK/tree/master/" target="_blank">다운로드</a>| 띠배너 / 전면배너|
+|Facebook|v6.0.0|<a href="https://developers.facebook.com/docs/audience-network/download" target="_blank">다운로드</a>| 띠배너 / 전면배너 |
+|Inmobi|v9.1.0|<a href="http://www.inmobi.com/products/sdk/" target="_blank">다운로드</a>| 띠배너 / 전면배너 |
 
 
 
@@ -461,10 +461,18 @@ ALInterstitialAdDelegate 프로토콜을 구현한 delegate를 아래와 같이 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [ALMediation registerPlatform:ALMEDIATION_PLATFORM_DEFAULT withClass:nil];
 
     // 미디에이션 플랫폼 등록
     [ALMediation registerPlatform:ALMEDIATION_PLATFORM_ADMOB withClass:[ALAdapterAdmob class]];
+    [ALMediation registerPlatform:ALMEDIATION_PLATFORM_FACEBOOK withClass:[ALAdapterFacebook class]];
+    [ALMediation registerPlatform:ALMEDIATION_PLATFORM_ADAM withClass:[ALAdapterAdfit class]];
     [ALMediation registerPlatform:ALMEDIATION_PLATFORM_CAULY withClass:[ALAdapterCauly class]];
+    [ALMediation registerPlatform:ALMEDIATION_PLATFORM_INMOBI withClass:[ALAdapterInmobi class]];
+    [ALAdapterInmobi initializeInmobiSDK:INMOBI_ACCOUNTID_TEST_KEY];
+    [ALMediation registerPlatform:ALMEDIATION_PLATFORM_ADMIXER withClass:[ALAdapterAdMixer class]];
+    [ALAdapterAdMixer initializeAdMixer];
 
 }
 @end
@@ -478,13 +486,20 @@ ALInterstitialAdDelegate 프로토콜을 구현한 delegate를 아래와 같이 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
+    
+    [_bannerView setIsTestMode:YES];
+    [_bannerView setRepeatLoop:YES];
+    [_bannerView setRepeatLoopWaitTime:5];
+    [_bannerView setBannerSize:AL_SIZE_BANNER];
+    
     // 미디에이션 플랫폼 띠배너 키설정
-    [_bannerView setKey:ADMOB_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
-    [_bannerView setKey:CAULY_ID forPlatform:ALMEDIATION_PLATFORM_CAULY];
+    [_bannerView setKey:ADMOB_BANNER_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_ADMOB];
+    [_bannerView setKey:FACEBOOK_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_FACEBOOK];
+    [_bannerView setKey:ADAM_BANNER_TEST_ID forPlatform:ALMEDIATION_PLATFORM_ADAM];
+    [_bannerView setKey:CAULY_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_CAULY];
+    [_bannerView setKey:INMOBI_BANNER_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_INMOBI];
+    [_bannerView setKey:ADMIXER_BANNER_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_ADMIXER];
 
-    _bannerView.isTestMode = YES;
-    _bannerView.repeatLoop = NO;
 
     [_bannerView startAdViewWithKey:ADLIB_APP_KEY
                  rootViewController:self
@@ -509,11 +524,12 @@ ALInterstitialAdDelegate 프로토콜을 구현한 delegate를 아래와 같이 
     [super viewDidAppear:animated];
 
     // 미디에이션 플랫폼 하프배너 키설정 
-    [_bannerView setKey:ADMOB_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
-
-    _bannerView.isTestMode = YES;
-    _bannerView.repeatLoop = NO;
-	_bannerView.bannerSize = AL_SIZE_HALF; // 하프 배너 설정
+    [_bannerView setKey:ADMOB_BANNER_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_ADMOB];
+    [_bannerView setKey:ADAM_HALF_BANNER_TEST_ID forPlatform:ALMEDIATION_PLATFORM_ADAM];
+    
+    [_bannerView setIsTestMode:YES];
+    [_bannerView setRepeatLoop:NO];
+    [_bannerView setBannerSize:AL_SIZE_HALF]; // 하프 배너 설정
 
     [_bannerView startAdViewWithKey:ADLIB_APP_KEY
                  rootViewController:self
@@ -538,10 +554,16 @@ ALInterstitialAdDelegate 프로토콜을 구현한 delegate를 아래와 같이 
     ALInterstitialAd *interstitialAd = [[ALInterstitialAd alloc] initWithRootViewController:self];
     self.interstitialAd = interstitialAd;
 
+    [_interstitialAd setIsTestMode:YES];
+    
     //미디에이션 플랫폼 전면배너 키설정
-    [_interstitialAd setKey:ADMOB_INTERSTITIAL_ID forPlatform:ALMEDIATION_PLATFORM_ADMOB];
-    [_interstitialAd setKey:CAULY_ID forPlatform:ALMEDIATION_PLATFORM_CAULY];
-
-    [_interstitialAd requestAdWithKey:ADLIB_APP_KEY adDelegate:self];
+    [_interstitialAd setKey:ADMIXER_INTERSTITIAL_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_ADMIXER];
+    [_interstitialAd setKey:ADMOB_INTERSTITIAL_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_ADMOB];
+    [_interstitialAd setKey:FACEBOOK_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_FACEBOOK];
+    [_interstitialAd setKey:CAULY_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_CAULY];
+    [_interstitialAd setKey:INMOBI_INTERSTITIAL_TEST_KEY forPlatform:ALMEDIATION_PLATFORM_INMOBI];
+    
+    [_interstitialAd requestAdWithKey:ADLIB_APP_KEY 
+    			   adDelegate:self];
 }
 ```
